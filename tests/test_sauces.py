@@ -1,7 +1,7 @@
 from selenium.webdriver.common.by import By
 import time
 
-def test_login_account(driver):
+def test_sauces_click(driver):
 
     driver.find_element(By.XPATH, "/html/body/div/div/main/section[2]/div/button").click()
 
@@ -13,7 +13,10 @@ def test_login_account(driver):
 
     time.sleep(3)
 
-    assert driver.find_element(By.XPATH, "/html/body/div/div/main/section[2]/div/button").text == 'Оформить заказ'
+    driver.find_element(By.XPATH, "/html/body/div/div/main/section[1]/div[1]/div[2]/span").click()
+
+    time.sleep(3)
+
+    assert driver.find_element(By.XPATH, "/html/body/div/div/main/section[1]/div[2]/ul[2]/a[1]/p").text == 'Соус Spicy-X'
 
     driver.quit()
-
